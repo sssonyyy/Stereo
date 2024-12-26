@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Документация проекта{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <section>
+            <h2>Обзор</h2>
+            <p>Этот проект использует модели глубокого обучения для обработки аудио и изображений. Он включает в себя несколько API для предсказания классов аудиосигналов и обнаружения объектов на изображениях.</p>
+        </section>
+
+        <section>
+            <h2>API Эндпоинты</h2>
+            <h3>/api/dense</h3>
+            <p>
+                Метод: <strong>POST</strong><br>
+                Описание: Принимает аудиофайлы и возвращает предсказания классов.
+            </p>
+            <h4>Пример запроса</h4>
+            <div class="card">
+                <div class="card-body">
+                    <pre class="bg-light text-dark p-2">
+POST /api/dense
+Content-Type: multipart/form-data
+
+Files: audio1.wav, audio2.wav
+                    </pre>
+                </div>
+            </div>
+            <h4>Пример ответа</h4>
+            <div class="card">
+                <div class="card-body">
+                    <pre class="bg-light text-dark p-2">
+{
+    "predictions": [["Guitar_Sound"], ["Drum_Sound"]],
+    "uploaded_files": ["audio1.wav", "audio2.wav"]
+}
+                    </pre>
+                </div>
+            </div>
+
+            <h3>/api/cnn</h3>
+            <p>
+                Метод: <strong>POST</strong><br>
+                Описание: Принимает аудиофайлы и использует CNN для классификации.
+            </p>
+            <h4>Пример запроса</h4>
+            <div class="card">
+                <div class="card-body">
+                    <pre class="bg-light text-dark p-2">
+POST /api/cnn
+Content-Type: multipart/form-data
+
+Files: audio1.wav
+                    </pre>
+                </div>
+            </div>
+            <h4>Пример ответа</h4>
+            <div class="card">
+                <div class="card-body">
+                    <pre class="bg-light text-dark p-2">
+{
+    "predictions": [["Piano_Sound"]],
+    "uploaded_files": ["audio1.wav"]
+}
+                    </pre>
+                </div>
+            </div>
+
+            <h3>/api/yolov5</h3>
+            <p>
+                Метод: <strong>POST</strong><br>
+                Описание: Принимает изображения и возвращает данные об обнаруженных объектах.
+            </p>
+            <h4>Пример запроса</h4>
+            <div class="card">
+                <div class="card-body">
+                    <pre class="bg-light text-dark p-2">
+POST /api/yolov5
+Content-Type: multipart/form-data
+
+Files: image1.jpg
+                    </pre>
+                </div>
+            </div>
+            <h4>Пример ответа</h4>
+            <div class="card">
+                <div class="card-body">
+                    <pre class="bg-light text-dark p-2">
+{
+    "predictions": [
+        {
+            "file": "image1.jpg",
+            "results": [{"name": "Piano", "confidence": 0.85}]
+        }
+    ],
+    "uploaded_files": ["image1.jpg"]
+}
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Установка</h2>
+            <p>Чтобы установить и запустить проект, выполните следующие шаги:</p>
+            <ol>
+                <li>Клонируйте репозиторий: <code>git clone &lt;url&gt;</code></li>
+                <li>Установите зависимости: <code>pip install -r requirements.txt</code></li>
+                <li>Запустите приложение: <code>flask run</code></li>
+            </ol>
+        </section>
+    </div>
+{% endblock %}

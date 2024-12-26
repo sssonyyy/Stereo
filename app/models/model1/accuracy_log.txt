@@ -1,0 +1,15 @@
+Epoch 1: Train Accuracy: 0.6101179122924805, Validation Accuracy: 1.0
+Epoch 2: Train Accuracy: 0.6215291023254395, Validation Accuracy: 0.6666666865348816
+Epoch 3: Train Accuracy: 0.657284140586853, Validation Accuracy: 0.6666666865348816
+Epoch 4: Train Accuracy: 0.6565234065055847, Validation Accuracy: 0.0
+Epoch 5: Train Accuracy: 0.6755420565605164, Validation Accuracy: 0.6666666865348816
+Epoch 6: Train Accuracy: 0.6744009256362915, Validation Accuracy: 0.0
+Epoch 7: Train Accuracy: 0.6534804105758667, Validation Accuracy: 0.6666666865348816
+Epoch 8: Train Accuracy: 0.6698364615440369, Validation Accuracy: 0.0
+Epoch 9: Train Accuracy: 0.6519589424133301, Validation Accuracy: 0.6666666865348816
+Epoch 10: Train Accuracy: 0.6724990606307983, Validation Accuracy: 0.6666666865348816
+Epoch 11: Train Accuracy: 0.6782046556472778, Validation Accuracy: 0.3333333432674408
+Epoch 12: Train Accuracy: 0.6808672547340393, Validation Accuracy: 0.0
+Epoch 13: Train Accuracy: 0.6831494569778442, Validation Accuracy: 0.3333333432674408
+Epoch 14: Train Accuracy: 0.6789653897285461, Validation Accuracy: 0.6666666865348816
+Epoch 15: Train Accuracy: 0.6835298538208008, Validation Accuracy: 0.0

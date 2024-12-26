@@ -1,0 +1,30 @@
+Didgeridoo
+Tambourine
+Xylophone
+acordian
+alphorn
+bagpipes
+banjo
+bongo drum
+casaba
+castanets
+clarinet
+clavichord
+concertina
+drums
+dulcimer
+flute
+guiro
+guitar
+harmonica
+harp
+marakas
+ocarina
+piano
+saxaphone
+sitar
+steel drum
+trombone
+trumpet
+tuba
+violin

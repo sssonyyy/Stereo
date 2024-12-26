@@ -1,0 +1,58 @@
+html, body {
+    height: 100%; /* Устанавливаем высоту для html и body */
+    margin: 0; /* Убираем отступы по умолчанию */
+    display: flex; /* Используем flexbox для body */
+    flex-direction: column; /* Располагаем элементы в колонку */
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -230px; /* Скрыто за пределами экрана */
+    width: 250px;
+    height: 100%;
+    background-color: #003366; /* Цвет фона */
+    transition: left 0.3s ease;
+}
+
+.sidebar:hover {
+    left: 0; /* Показать боковое меню при наведении */
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #495057; /* Цвет при наведении на ссылку */
+}
+
+main {
+    padding: 20px;
+    background: url('image/bg.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+    flex: 1; /* Позволяем main занимать оставшееся пространство */
+}
+
+footer {
+    background-color: #f8f9fa; /* Цвет фона футера */
+    color: #343a40; /* Цвет текста футера */
+    text-align: center;
+    padding: 20px;
+}
+
+.bg-success-custom {
+    background-color: #93b2d2;
+}
+
+.logo-icon {
+    max-height: 50px;
+    width: 100%;
+    height: auto; /* Установите auto, чтобы сохранить пропорции */
+}
+
+.red {
+    color: red;
+}

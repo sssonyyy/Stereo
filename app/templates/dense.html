@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Model Dense{% endblock %}
+{% block content %}
+<h2>Model Dense</h2>
+<h2>Выбор типа классификации</h2>
+<form method="post" enctype="multipart/form-data">
+    <label for="modelType">Выберите тип модели:</label>
+    <select id="modelType" name="modelType" class="form-control mb-3">
+        <option value="audio">Аудио</option>
+        <option value="image">Изображение</option>
+    </select>
+
+    <h3>Загрузка файлов</h3>
+    <input type="file" name="files" id="files" accept=".wav, .png, .jpg, .jpeg" multiple class="form-control mb-3">
+
+    <button type="submit" id="uploadBtn" class="btn btn-primary">Загрузить и Обработать</button>
+</form>
+
+{% if predictions %}
+    <h3>Результаты обработки:</h3>
+    <ul>
+        {% for i in range(predictions|length) %}
+        <li ><h1 class="red">Предсказанный класс: {{ predictions[i] | join(', ') }}</h1></li>
+            <li>
+                {% set file_path = url_for('static', filename='uploads/' + uploaded_files[i]) %}
+                {% if uploaded_files[i].endswith('.wav') %}
+                    <audio controls>
+                        <source src="{{ file_path }}" type="audio/wav">
+                        Ваш браузер не поддерживает аудиоплеер.
+                    </audio>
+                {% elif uploaded_files[i].endswith('.png') or uploaded_files[i].endswith('.jpg') or uploaded_files[i].endswith('.jpeg') %}
+                    <img src="{{ file_path }}" alt="Uploaded Image" style="max-width: 300px; max-height: 300px;">
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Пока нет результатов для отображения.</p>
+{% endif %}
+{% endblock %}

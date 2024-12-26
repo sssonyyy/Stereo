@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <header class="text-center mb-4">
+        <h1>Добро пожаловать в наше приложение!</h1>
+        <p class="lead">Выберите модель для анализа аудио или изображений.</p>
+    </header>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="feature-box text-center p-4 border rounded shadow-sm" style="background-color: #d3d3d3; height: 300px; color: black;">
+                <div class="feature-icon mb-3">
+                    <i class="fas fa-music fa-3x text-primary"></i>
+                </div>
+                <h3>Анализ аудио (Dense)</h3>
+                <p>Загрузите аудиофайлы для анализа с использованием модели Dense.</p>
+                <a href="{{ url_for('main.dense') }}" class="btn btn-primary">Перейти</a>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="feature-box text-center p-4 border rounded shadow-sm" style="background-color: #d3d3d3; height: 300px; color: black;">
+                <div class="feature-icon mb-3">
+                    <i class="fas fa-microchip fa-3x text-primary"></i>
+                </div>
+                <h3>Анализ аудио (CNN)</h3>
+                <p>Используйте модель CNN для анализа ваших аудиофайлов.</p>
+                <a href="{{ url_for('main.cnn') }}" class="btn btn-primary">Перейти</a>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="feature-box text-center p-4 border rounded shadow-sm" style="background-color: #d3d3d3; height: 300px; color: black;">
+                <div class="feature-icon mb-3">
+                    <i class="fas fa-image fa-3x text-primary"></i>
+                </div>
+                <h3>Обнаружение объектов (YOLOv5)</h3>
+                <p>Загрузите изображения для обнаружения объектов с помощью YOLOv5.</p>
+                <a href="{{ url_for('main.yolov5') }}" class="btn btn-primary">Перейти</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
